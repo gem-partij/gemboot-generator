@@ -1,0 +1,33 @@
+{
+  "name": "gemboot-generator",
+  "version": "0.0.6",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Ilham Eka Prasetya",
+  "keywords": [
+    "gembootjs",
+    "nodejs",
+    "expressjs",
+    "comanderjs"
+  ],
+  "license": "MIT",
+  "bin": {
+    "gmbt": "./bin/index.js"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "colors": "^1.3.3",
+    "commander": "^2.20.0",
+    "fs-extra": "^8.0.1",
+    "handlebars": "^4.1.2",
+    "inquirer": "^6.3.1",
+    "mocha": "^6.1.4",
+    "pad": "^3.2.0"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.4.4"
+  }
+}
