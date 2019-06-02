@@ -1,5 +1,3 @@
-const debug = require("debug")("app:db");
-
 const CrudRepository = require("gemboot").CrudRepository;
 const {{name}} = require("@models/{{name}}");
 

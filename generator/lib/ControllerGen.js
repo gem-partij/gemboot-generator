@@ -22,7 +22,7 @@ class ControllerGen {
 				name: this.name
 			});
 			let write = await fs.outputFile(
-				`${this.output}/ ${this.name}Controller.js`,
+				`${this.output}/${this.name}Controller.js`,
 				content
 			);
 			console.log(
