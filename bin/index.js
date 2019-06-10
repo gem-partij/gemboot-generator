@@ -1,14 +1,11 @@
 #!/usr/bin/env node
-
+var path = require("path");
 program = require("../packages").program;
 colors = require("../packages").colors;
-controllerGen = require("../generator/lib/ControllerGen.js");
-model = require("../generator/lib/ModelGen.js");
-repo = require("../generator/lib/RepositoryGen.js");
+generator = require("../generator");
 action = require("../action");
 program
   .command("add")
-  .alias("ls")
   .description("")
   .action(function(name) {
     action();
@@ -19,14 +16,18 @@ program
   .alias("ac")
   .description("generate controller file into app/controller")
   .action(function(name) {
-    genController = new controllerGen(name);
+    genController = new generator({
+      name: name
+    });
   });
 program
   .command("add:model <name>")
   .alias("am")
   .description("generate model file into app/model folder")
-  .action(function(name) {
-    genModel = new model(name);
+  .option("-s, --small [value]", "small pizza size")
+  .action(function(name, args) {
+    console.log(name);
+    console.log(args.small);
   });
 
 program
@@ -36,4 +37,5 @@ program
   .action(function(name) {
     genRepo = new repo(name);
   });
+
 program.parse(process.argv);
